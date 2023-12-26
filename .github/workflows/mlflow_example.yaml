@@ -27,15 +27,4 @@ jobs:
     - name: Run MLflow script
       run: |
         python train_model.py
-        mlflow ui --host 0.0.0.0 &
-
-    - name: Wait for MLflow UI to start
-      run: sleep 10
-
-    - name: Capture MLflow logs
-      run: |
-        curl -O http://127.0.0.1:5000
-        cat index.html
-
-    - name: Stop MLflow UI
-      run: pkill -f "mlflow ui"
+        mlflow ui --host 0.0.0.0 
