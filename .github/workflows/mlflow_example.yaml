@@ -25,4 +25,6 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run MLflow scriptt
-      run: python train_model.py
+      run: |
+        python train_model.py
+        cat mlflow_logs.txt
